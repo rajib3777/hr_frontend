@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HR Advisor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ✅ Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+  <!-- ✅ Animation -->
+  <style>
+    .fade {
+      animation: fade 1s ease-in-out;
+    }
+    @keyframes fade {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    .stat-number {
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: var(--dark-blue);
+        line-height: 1;
+    }
+    
+    .testimonial-bg {
+        background: linear-gradient(rgba(30, 58, 138, 0.9), rgba(30, 58, 138, 0.9)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+    
+    .team-member {
+        transition: all 0.3s ease;
+        overflow: hidden;
+    }
+    
+    .team-member:hover {
+        transform: translateY(-10px);
+    }
+    
+    .team-social {
+        position: absolute;
+        bottom: -50px;
+        left: 0;
+        right: 0;
+        background: rgba(37, 99, 235, 0.9);
+        padding: 15px;
+        transition: all 0.3s ease;
+    }
+    
+    .team-member:hover .team-social {
+        bottom: 0;
+    }
+    
+    .progress-bar {
+        height: 6px;
+        background: #e2e8f0;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
+    .progress-fill {
+        height: 100%;
+        background: var(--primary-blue);
+        border-radius: 10px;
+    }
+    
+    /* Mobile Menu */
+    .mobile-menu {
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .mobile-menu.active {
+        transform: translateX(0);
+    }
+
+    .btn-primary {
+        background: #0d6efd;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 4px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+        background: #0b5ed7;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+    }
+    
+    .btn-secondary {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+        padding: 10px 28px;
+        border-radius: 4px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-secondary:hover {
+        background: white;
+        color: #1e2a39;
+    }
+    
+    .service-icon {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+
+    .counter-box {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    
+    .counter-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .blog-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+    }
+    
+    .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .process-step {
+        position: relative;
+        text-align: center;
+        padding: 0 20px;
+    }
+    
+    .process-step:not(:last-child):after {
+        content: '';
+        position: absolute;
+        top: 40px;
+        right: -30px;
+        width: 60px;
+        height: 2px;
+        background: #e9ecef;
+    }
+
+    .step-number {
+        width: 80px;
+        height: 80px;
+        background: #0d6efd;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: 600;
+        margin: 0 auto 20px;
+    }
+
+    .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+    }
+    
+    .animate-on-scroll.animated {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .feature-box {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 30px;
+    }
+    
+    .feature-icon {
+        width: 50px;
+        height: 50px;
+        background: #e9f2ff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        color: #0d6efd;
+        font-size: 20px;
+    }
+    
+    .process-step {
+        position: relative;
+        text-align: center;
+        padding: 0 20px;
+    }
+    
+    .process-step:not(:last-child):after {
+        content: '';
+        position: absolute;
+        top: 40px;
+        right: -30px;
+        width: 60px;
+        height: 2px;
+        background: #e9ecef;
+    }
+    
+    .step-number {
+        width: 80px;
+        height: 80px;
+        background: #0d6efd;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: 600;
+        margin: 0 auto 20px;
+    }
+
+    .team-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+    }
+    
+    .team-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+        
+        
+  </style>
+</head>
+<body class="bg-white">
+
+<!-- ================= NAVBAR ================= -->
+<header class="w-full flex">
+
+  <!-- LEFT BLUE PART (Hero same line) -->
+  <div class="bg-gradient-to-r from-[#0a92ce] to-[#00b3d7] w-[60%] px-6 md:px-16 py-4 flex items-center">
+    <div class="flex items-center gap-2 text-white font-bold text-lg">
+      <span class="text-xl">◆</span> HR ADVISOR
+    </div>
+  </div>
+
+  <!-- RIGHT WHITE PART -->
+  <div class="w-[60%] bg-white px-6 md:px-16 py-4 flex items-center justify-end relative">
+    
+    <button id="menuBtn" class="text-black text-2xl md:hidden">☰</button>
+
+    <!-- DESKTOP MENU -->
+    <nav class="hidden md:flex gap-10 text-black text-sm font-medium items-center">
+
+      <!-- HOME -->
+      <a href="#" class="hover:text-[#0a8ecf] transition">Home</a>
+
+      <!-- ABOUT DROPDOWN -->
+      <div class="relative group">
+        <a href="#" class="hover:text-[#0a8ecf] transition">About</a>
+        <div class="absolute left-0 top-full mt-6 w-44 bg-white shadow-lg hidden group-hover:block">
+          <a href="#" class="block px-5 py-3 hover:bg-gray-100">Our Team</a>
+          <a href="#" class="block px-5 py-3 hover:bg-gray-100">Company</a>
+        </div>
+      </div>
+
+      <!-- SERVICES DROPDOWN -->
+      <div class="relative group">
+        <a href="#" class="hover:text-[#0a8ecf] transition">Services</a>
+        <div class="absolute left-0 top-full mt-6 w-52 bg-white shadow-lg hidden group-hover:block">
+          <a href="#" class="block px-5 py-3 hover:bg-gray-100">HR Consulting</a>
+          <a href="#" class="block px-5 py-3 hover:bg-gray-100">Recruitment</a>
+          <a href="#" class="block px-5 py-3 hover:bg-gray-100">Training</a>
+        </div>
+      </div>
+
+      <!-- PAGES DROPDOWN -->
+      <div class="relative group">
+        <a href="#" class="hover:text-[#0a8ecf] transition">Pages</a>
+        <div class="absolute left-0 top-full mt-6 w-44 bg-white shadow-lg hidden group-hover:block">
+          <a href="#" class="block px-5 py-3 hover:bg-gray-100">Case Study</a>
+          <a href="#" class="block px-5 py-3 hover:bg-gray-100">FAQ</a>
+        </div>
+      </div>
+
+      <!-- CONTACT DROPDOWN -->
+      <div class="relative group">
+        <a href="#" class="hover:text-[#0a8ecf] transition">Contact</a>
+        <div class="absolute left-0 top-full mt-6 w-44 bg-white shadow-lg hidden group-hover:block">
+          <a href="#" class="block px-5 py-3 hover:bg-gray-100">Contact Us</a>
+          <a href="#" class="block px-5 py-3 hover:bg-gray-100">Support</a>
+        </div>
+      </div>
+
+    </nav>
+  </div>
+</header>
+
+<!-- ================= MOBILE MENU ================= -->
+<div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg text-black text-center py-6 space-y-4">
+  <a href="#" class="block">Home</a>
+  <a href="#" class="block">About</a>
+  <a href="#" class="block">Services</a>
+  <a href="#" class="block">Pages</a>
+  <a href="#" class="block">Contact</a>
+</div>
+<section class="flex flex-col md:flex-row min-h-[90vh] relative bg-white">
+
+  <!-- LEFT BLUE PART -->
+  <div class="w-full md:w-1/2 bg-gradient-to-r from-[#0a92ce] to-[#00b3d7] text-white px-10 md:px-20 py-28 relative z-10 overflow-hidden">
+
+    <div id="textSlider">
+      <div class="slide fade block">
+        <p class="uppercase tracking-widest text-sm">Your Strategic Partner</p>
+        <h1 class="text-4xl md:text-5xl font-light mt-6">
+          Human Resource <br> Solution Partner
+        </h1>
+      </div>
+
+      <div class="slide fade hidden">
+        <p class="uppercase tracking-widest text-sm">Your Strategic Partner</p>
+        <h1 class="text-4xl md:text-5xl font-light mt-6">
+          Business Consulting <br> Experts
+        </h1>
+      </div>
+
+      <div class="slide fade hidden">
+        <p class="uppercase tracking-widest text-sm">Your Strategic Partner</p>
+        <h1 class="text-4xl md:text-5xl font-light mt-6">
+          Professional HR <br> Services
+        </h1>
+      </div>
+    </div>
+
+    <a href="#" class="inline-block mt-10 bg-[#043d5a] px-10 py-3 text-sm transition-all duration-500 hover:bg-white hover:text-[#043d5a] animate-pulse">
+      More Info
+    </a>
+
+    <div class="absolute bottom-10 left-20 flex gap-6 text-2xl cursor-pointer">
+      <span id="prev">←</span>
+      <span id="next">→</span>
+    </div>
+  </div>
+
+  <!-- RIGHT WHITE SPACE -->
+  <div class="w-full md:w-1/2 bg-white relative"></div>
+
+  <!-- FLOATING IMAGES -->
+  <div class="flex flex-col md:absolute md:top-1/2 md:-translate-y-1/2 md:left-[42%] w-full md:w-[50%] h-auto md:h-[80%] z-20 gap-6">
+    <img class="img-slide w-full md:h-full object-cover rounded-xl shadow-2xl fade block"
+      src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+
+    <img class="img-slide w-full md:h-full object-cover rounded-xl shadow-2xl fade hidden"
+      src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
+
+    <img class="img-slide w-full md:h-full object-cover rounded-xl shadow-2xl fade hidden"
+      src="https://images.unsplash.com/photo-1551836022-d5d88e9218df">
+  </div>
+
+</section>
+
+<section class="py-16 px-4 md:px-8 lg:px-16 bg-white">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12 uppercase tracking-wide">HOW WE ARE DIFFERENT</h2>
+    
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 max-w-7xl mx-auto">
+        <!-- Text Content -->
+        <div class="w-full lg:w-1/2">
+            <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Comprehensive HR Solutions</h3>
+            <div class="space-y-4 mb-8">
+                <p class="text-gray-600 text-base md:text-lg leading-relaxed">
+                    Achieved a second main change. We provide a comprehensive service that identifies the microorganizable in the organization and designs the job description and skill requirements for this role.
+                </p>
+                <p class="text-gray-600 text-base md:text-lg leading-relaxed">
+                    The advisory process is broad as the effective resource Outsourcing is aimed to compensate from our unmanaged competitiveness.
+                </p>
+            </div>
+            <a href="#" class="inline-block bg-gradient-to-r from-[#0a92ce] to-[#00b3d7] hover:bg-blue-200 text-white font-semibold py-3 px-6 rounded-md transition duration-300 uppercase tracking-wider text-sm">
+                Discover Our Approach
+            </a>
+        </div>
+        
+        <!-- Image with fallback -->
+        <div class="w-full lg:w-1/2">
+            <div class="h-80 md:h-96 rounded-lg shadow-lg overflow-hidden">
+                <img 
+                    src="https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                    alt="HR Solutions"
+                    class="w-full h-full object-cover"
+                    onerror="
+                        this.onerror=null;
+                        this.src='https://via.placeholder.com/700x400?text=HR+Solutions+Image+Not+Available';
+                    "
+                >
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Process Section -->
+<section class="section-padding bg-light-gray mt-10">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <span class="text-primary font-medium">OUR PROCESS</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mt-2 mb-4">How We Work</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Our proven process ensures we deliver the best HR solutions for your business</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3 class="text-xl font-bold text-dark mb-3">Discovery</h3>
+                <p class="text-gray-600">We analyze your business needs and HR challenges to understand your requirements.</p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3 class="text-xl font-bold text-dark mb-3">Planning</h3>
+                <p class="text-gray-600">We develop a customized HR strategy tailored to your specific business goals.</p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3 class="text-xl font-bold text-dark mb-3">Implementation</h3>
+                <p class="text-gray-600">We implement the HR solutions with minimal disruption to your daily operations.</p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h3 class="text-xl font-bold text-dark mb-3">Evaluation</h3>
+                <p class="text-gray-600">We continuously monitor and refine the solutions to ensure optimal performance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- About Section -->
+<section class="section-padding mt-10">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col lg:flex-row items-center">
+            <div class="lg:w-1/2 mb-10 lg:mb-0">
+                <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="About HR Advisor" class="rounded-lg shadow-lg">
+            </div>
+            <div class="lg:w-1/2 lg:pl-12">
+                <span class="text-primary font-medium">ABOUT US</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mt-2 mb-6">Why Choose HR Advisor?</h2>
+                <p class="text-gray-600 mb-8">With over 15 years of experience in HR consulting, we've helped hundreds of businesses optimize their human resources for maximum productivity and employee satisfaction.</p>
+                
+                <div class="space-y-6 mb-8">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-dark mb-2">Expert HR Consultants</h3>
+                            <p class="text-gray-600">Our team consists of certified HR professionals with diverse industry experience.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-dark mb-2">Customized Solutions</h3>
+                            <p class="text-gray-600">We tailor our services to meet the specific needs and challenges of your business.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-dark mb-2">Proven Results</h3>
+                            <p class="text-gray-600">Our clients have seen significant improvements in employee retention and performance.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="#" class="btn-primary inline-flex items-center">
+                    Learn More About Us
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="w-full bg-white py-10">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 items-stretch">
+
+    <!-- Left Blue Box -->
+    <div class="bg-[#0073A8] text-white p-12 flex flex-col justify-center">
+      <p class="text-xl leading-relaxed">
+        With our specialists, and <br>
+        experts at your disposal, <br>
+        you will face complex HR <br>
+        issues with confidence
+      </p>
+
+      <div class="mt-6 w-12 h-[2px] bg-white"></div>
+    </div>
+
+    <!-- Right Side Image -->
+    <div class="h-full w-full">
+      <img 
+        src="https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg" 
+        alt="HR discussion"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!-- counter section -->
+<section class="py-20 bg-gradient-to-r from-[#0a92ce] to-[#00b3d7] text-white mt-10">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <div class="counter-box">
+                <div class="text-4xl md:text-5xl font-bold mb-2 text-blue-400" data-count="250">0</div>
+                <p class="text-lg text-black">Happy Clients</p>
+            </div>
+
+            <div class="counter-box">
+                <div class="text-4xl md:text-5xl font-bold mb-2 text-blue-400" data-count="15">0</div>
+                <p class="text-lg text-black">Years Experience</p>
+            </div>
+
+            <div class="counter-box">
+                <div class="text-4xl md:text-5xl font-bold mb-2 text-blue-400" data-count="98">0</div>
+                <p class="text-lg text-black">Success Rate</p>
+            </div>
+
+            <div class="counter-box">
+                <div class="text-4xl md:text-5xl font-bold mb-2 text-blue-400" data-count="50">0</div>
+                <p class="text-lg text-black">HR Experts</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<section class="w-[80%] bg-white py-10 ml-12">
+
+  <!-- DESKTOP VERSION (exact like screenshot) -->
+  <div class="hidden md:block">
+    <div class="max-w-[1275px] mx-auto relative h-[420px]">
+
+      <!-- MAIN BLUE PANEL (left big block) -->
+      <div class="absolute left-10 top-[60px] w-[58%] bg-gradient-to-r from-[#0a92ce] to-[#00b3d7]  pt-16 pr-16 pb-20 pl-16">
+
+        <!-- QUOTE ICON -->
+        <div class="text-[60px] text-yellow-300 leading-none mb-6">”</div>
+
+        <!-- MAIN TEXT -->
+        <p class="text-[26px] leading-[1.4] text-[#3d3f43] font-light max-w-[430px] mb-6">
+          These guys are real professionals. Their experts has helped us so many times!
+        </p>
+
+        <!-- AUTHOR -->
+        <p class="text-[13px] tracking-wide">
+          <span class="text-[#2d96c1] font-semibold">FRED PETERSON</span>
+          <span class="text-gray-500"> CEO, Expert Ltd.</span>
+        </p>
+      </div>
+
+      <!-- BOTTOM BLUE STRIPE (under left + part under image) -->
+      <div class="absolute left-[49%] top-[300px] w-[60%] h-[180px] bg-gradient-to-l from-[#0a92ce] to-[#00b3d7]"></div>
+
+      <!-- RIGHT IMAGE (same position/size as screenshot) -->
+      <div class="absolute right-0 top-[40px] w-[48%] h-[360px] overflow-hidden">
+        <img
+          src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+    </div>
+  </div>
+
+ 
+  <div class="block md:hidden px-4">
+    <div class="bg-blue-300 px-6 py-8">
+      <div class="text-[40px] text-[#5faac7] leading-none mb-4">”</div>
+      <p class="text-[20px] leading-[1.4] text-[#3d3f43] font-light mb-4">
+        These guys are real professionals. Their experts has helped us so many times!
+      </p>
+      <p class="text-[12px] tracking-wide">
+        <span class="text-[#2d96c1] font-semibold">FRED PETERSON</span>
+        <span class="text-gray-500"> CEO, Expert Ltd.</span>
+      </p>
+    </div>
+
+    <img
+      src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      class="w-full rounded-md object-cover"
+    />
+  </div>
+
+</section>
+
+
+
+
+<!-- Team Section -->
+<section class="section-padding mt-12">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <span class="text-primary font-medium">OUR TEAM</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mt-2 mb-4">Meet Our Experts</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Our team of certified HR professionals brings diverse expertise to solve your HR challenges</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Team Member 1 -->
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Team Member" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-dark mb-1">Sarah Johnson</h3>
+                    <p class="text-primary mb-4">HR Director</p>
+                    <p class="text-gray-600 text-sm mb-4">15+ years of experience in talent management and organizational development.</p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Team Member 2 -->
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Team Member" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-dark mb-1">Michael Chen</h3>
+                    <p class="text-primary mb-4">Compensation Specialist</p>
+                    <p class="text-gray-600 text-sm mb-4">Expert in compensation strategy, benefits administration, and pay equity analysis.</p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Team Member 3 -->
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80" alt="Team Member" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-dark mb-1">Emily Rodriguez</h3>
+                    <p class="text-primary mb-4">Training Manager</p>
+                    <p class="text-gray-600 text-sm mb-4">Specializes in leadership development, employee training programs, and skill assessment.</p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Team Member 4 -->
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Team Member" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-dark mb-1">David Wilson</h3>
+                    <p class="text-primary mb-4">HR Compliance Officer</p>
+                    <p class="text-gray-600 text-sm mb-4">Ensures organizational compliance with employment laws and regulations.</p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Testimonials Section -->
+<section class="section-padding testimonial-bg text-white mt-10 py-12">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-4">CLIENT TESTIMONIALS</h2>
+            <p class="text-blue-100 max-w-2xl mx-auto">Hear from organizations that have transformed their HR practices with our consulting services.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-xl border border-blue-300 border-opacity-30">
+                <div class="flex items-center mb-6">
+                    <div class="w-16 h-16 bg-blue-300 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-user text-2xl text-blue-700"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">Jennifer Martinez</h3>
+                        <p class="text-blue-200 text-sm">CEO, TechSolutions Inc.</p>
+                    </div>
+                </div>
+                <p class="text-blue-100 italic">"HR Advisor transformed our recruitment process, reducing time-to-hire by 40% while improving candidate quality. Their strategic approach to talent acquisition has been a game-changer for our growth."</p>
+                <div class="mt-4 text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            
+            <div class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-xl border border-blue-300 border-opacity-30">
+                <div class="flex items-center mb-6">
+                    <div class="w-16 h-16 bg-blue-300 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-user text-2xl text-blue-700"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">Robert Kim</h3>
+                        <p class="text-blue-200 text-sm">HR Director, Global Retail Corp</p>
+                    </div>
+                </div>
+                <p class="text-blue-100 italic">"The compensation framework designed by HR Advisor helped us attract and retain top talent while staying within budget. Their data-driven approach provided the insights we needed to make informed decisions."</p>
+                <div class="mt-4 text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            
+            <div class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-xl border border-blue-300 border-opacity-30">
+                <div class="flex items-center mb-6">
+                    <div class="w-16 h-16 bg-blue-300 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-user text-2xl text-blue-700"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">Amanda Foster</h3>
+                        <p class="text-blue-200 text-sm">COO, HealthPlus Network</p>
+                    </div>
+                </div>
+                <p class="text-blue-100 italic">"Working with HR Advisor on our performance management system led to a 25% increase in employee engagement scores. Their customized approach addressed our unique organizational challenges perfectly."</p>
+                <div class="mt-4 text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section-padding mt-10">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <span class="text-primary font-medium">LATEST NEWS</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mt-2 mb-4">From Our Blog</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Stay updated with the latest HR trends, insights, and best practices</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Blog Post 1 -->
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Blog Post" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <span>May 15, 2023</span>
+                        <span class="mx-2">•</span>
+                        <span>HR Strategy</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">5 Ways to Improve Employee Retention in 2023</h3>
+                    <p class="text-gray-600 mb-4">Discover effective strategies to retain your top talent and reduce turnover in today's competitive job market.</p>
+                    <a href="#" class="text-primary font-semibold flex items-center">
+                        Read More
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+
+            <div class="blog-card">
+                <img src="https://images.pexels.com/photos/3182762/pexels-photo-3182762.jpeg?auto=compress&cs=tinysrgb&w=1200" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <span>April 28, 2023</span>
+                        <span class="mx-2">•</span>
+                        <span>Recruitment</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">The Future of Remote Hiring and Onboarding</h3>
+                    <p class="text-gray-600 mb-4">Learn how to adapt your hiring processes for remote work and effectively onboard new employees virtually.</p>
+                    <a href="#" class="text-primary font-semibold flex items-center">
+                        Read More
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Blog Post 3 -->
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Blog Post" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <span>April 10, 2023</span>
+                        <span class="mx-2">•</span>
+                        <span>Compliance</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Navigating the Latest Employment Law Changes</h3>
+                    <p class="text-gray-600 mb-4">Stay compliant with our overview of the most important employment law updates that affect your business.</p>
+                    <a href="#" class="text-primary font-semibold flex items-center">
+                        Read More
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- CTA Section -->
+<section class="section-padding bg-gradient-to-r from-[#0a92ce] to-[#00b3d7] text-white py-10 mt-10">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-6">Ready to Transform Your HR Strategy?</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">Contact us today for a complimentary consultation and discover how our HR solutions can drive growth and profitability for your organization.</p>
+        <button class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">Schedule Your Free Consultation</button>
+    </div>
+</section>
+
+
+<footer class="bg-gradient-to-r from-[#0a6ea4] to-[#0bb5d4] text-white py-16">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+
+        <!-- COLUMN 1 -->
+        <div>
+            <div class="flex items-center gap-3 mb-6">
+                <img src="https://i.ibb.co/H2cPRqF/hr-logo.png" class="w-10 h-10" />
+                <h2 class="text-xl font-semibold tracking-wide">HR ADVISOR</h2>
+            </div>
+
+            <ul class="space-y-4 text-sm leading-relaxed">
+                <li class="flex gap-3">
+                    <i class="fa-solid fa-house text-lg"></i>
+                    <span>123, New Lenox Chicago,<br>IL 60606</span>
+                </li>
+                <li class="flex gap-3 items-center">
+                    <i class="fa-solid fa-envelope text-lg"></i>
+                    <span>info@hradviser.com</span>
+                </li>
+                <li class="flex gap-3 items-center">
+                    <i class="fa-solid fa-phone text-lg"></i>
+                    <span>+3 833 211 32</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- COLUMN 2 -->
+        <div>
+            <h3 class="uppercase text-sm font-semibold tracking-wide mb-6">LINKS</h3>
+            <ul class="space-y-3 text-sm">
+                <li class="hover:underline cursor-pointer">About Us</li>
+                <li class="hover:underline cursor-pointer">Services</li>
+                <li class="hover:underline cursor-pointer">Support</li>
+            </ul>
+        </div>
+
+        <!-- COLUMN 3 -->
+        <div>
+            <h3 class="uppercase text-sm font-semibold tracking-wide mb-6">NAVIGATE</h3>
+            <ul class="space-y-3 text-sm">
+                <li class="hover:underline cursor-pointer">Home</li>
+                <li class="hover:underline cursor-pointer">Blog</li>
+                <li class="hover:underline cursor-pointer">Contacts</li>
+            </ul>
+        </div>
+
+        <!-- COLUMN 4 -->
+        <div>
+            <h3 class="uppercase text-sm font-semibold tracking-wide mb-6">SUBSCRIBE</h3>
+            <ul class="space-y-3 text-sm">
+                <li class="flex items-center gap-3 cursor-pointer"><i class="fa-brands fa-facebook-f"></i> Facebook</li>
+                <li class="flex items-center gap-3 cursor-pointer"><i class="fa-brands fa-twitter"></i> Twitter</li>
+                <li class="flex items-center gap-3 cursor-pointer"><i class="fa-brands fa-linkedin"></i> Linkedin</li>
+                <li class="flex items-center gap-3 cursor-pointer"><i class="fa-brands fa-google-plus-g"></i> Gplus</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="max-w-7xl mx-auto px-6 mt-12 flex flex-col md:flex-row justify-between items-center text-sm opacity-80">
+        <p>AxiomThemes ©. All rights reserved.</p>
+        <p class="mt-4 md:mt-0">Terms of use and Privacy Policy</p>
+    </div>
+
+    <!-- SCROLL TO TOP BUTTON -->
+    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        class="fixed bottom-6 right-6 bg-white text-blue-700 p-3 rounded shadow-lg hover:bg-gray-100 transition">
+        <i class="fa-solid fa-chevron-up text-lg"></i>
+    </button>
+</footer>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        /* ============================
+        MOBILE MENU
+        ============================ */
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.onclick = () => mobileMenu.classList.toggle("hidden");
+        }
+
+        /* ============================
+        CAROUSEL
+        ============================ */
+        const slides = document.querySelectorAll(".slide");
+        const images = document.querySelectorAll(".img-slide");
+        const next = document.getElementById("next");
+        const prev = document.getElementById("prev");
+
+        let index = 0;
+
+        function showSlide(i) {
+            slides.forEach(s => s.classList.add("hidden"));
+            images.forEach(img => img.classList.add("hidden"));
+
+            slides[i].classList.remove("hidden");
+            images[i].classList.remove("hidden");
+        }
+
+        if (slides.length > 0) showSlide(index);
+
+        if (next) {
+            next.onclick = () => {
+                index = (index + 1) % slides.length;
+                showSlide(index);
+            };
+        }
+
+        if (prev) {
+            prev.onclick = () => {
+                index = (index - 1 + slides.length) % slides.length;
+                showSlide(index);
+            };
+        }
+
+        let autoPlayInterval;
+        if (slides.length > 0) {
+            autoPlayInterval = setInterval(() => {
+                index = (index + 1) % slides.length;
+                showSlide(index);
+            }, 4000);
+        }
+
+        /* ============================
+        IMAGE FALLBACK
+        ============================ */
+        const imageUrls = [
+            "https://images.unsplash.com/photo-1551836026-d5c88ac6d6af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80",
+            "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80",
+            "https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+        ];
+
+        images.forEach((img) => {
+            let currentIndex = 0;
+            img.onerror = function() {
+                currentIndex++;
+                if (currentIndex < imageUrls.length) {
+                    this.src = imageUrls[currentIndex];
+                } else {
+                    this.style.display = 'none';
+                    this.parentElement.classList.add('image-fallback');
+                    this.parentElement.innerHTML = '<span>HR Solutions Image</span>';
+                }
+            };
+        });
+
+        /* ============================
+        COUNTER ANIMATION
+        ============================ */
+
+        const counters = document.querySelectorAll('.counter-box [data-count]');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = +counter.getAttribute('data-count');
+                    const duration = 2000;
+                    const increment = target / (duration / 16);
+                    let current = 0;
+
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current < target) {
+                            counter.textContent = Math.floor(current);
+                            setTimeout(updateCounter, 16);
+                        } else {
+                            counter.textContent = target;
+                        }
+                    };
+
+                    updateCounter();
+                    observer.unobserve(counter);
+                }
+
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => observer.observe(counter));
+
+    }); // END DOMContentLoaded
+
+
+    /* ============================
+    SCROLL ANIMATIONS
+    ============================ */
+    function checkScroll() {
+        const elements = document.querySelectorAll('.animate-fadeInUp, .animate-fadeInLeft, .animate-fadeInRight');
+
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.style.opacity = "1";
+                element.style.transform = "translateY(0)";
+                element.style.transform = "translateX(0)";
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('load', checkScroll);
+
+    document.querySelectorAll('.animate-fadeInUp').forEach(el => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(30px)";
+        el.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+    });
+
+    document.querySelectorAll('.animate-fadeInLeft').forEach(el => {
+        el.style.opacity = "0";
+        el.style.transform = "translateX(-30px)";
+        el.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+    });
+
+    document.querySelectorAll('.animate-fadeInRight').forEach(el => {
+        el.style.opacity = "0";
+        el.style.transform = "translateX(30px)";
+        el.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+    });
+
+</script>
+
+
+</body>
+</html>
