@@ -257,30 +257,46 @@
 <body class="bg-white">
 
 <!-- ================= NAVBAR ================= -->
+<!-- FULLY REFINED PROFESSIONAL NAVBAR (RESPONSIVE + SOCIAL ICONS + CLEAN DROPDOWNS) -->
 <header class="w-full flex">
 
-  <!-- LEFT BLUE PART (Hero same line) -->
+  <!-- LEFT BLUE PART (LOGO AREA) -->
   <div class="bg-gradient-to-r from-[#0a92ce] to-[#00b3d7] w-[60%] px-6 md:px-16 py-4 flex items-center">
-    <div class="flex items-center gap-2 text-white font-bold text-lg">
+    <div class="flex items-center gap-2 text-white font-bold text-lg select-none">
       <span class="text-xl">◆</span> HR ADVISOR
     </div>
   </div>
 
-  <!-- RIGHT WHITE PART -->
-  <div class="w-[60%] bg-white px-6 md:px-16 py-4 flex items-center justify-end relative">
-    
+  <!-- RIGHT WHITE PART (MENU AREA) -->
+  <div class="w-[60%] bg-white px-6 md:px-16 py-4 flex items-center justify-end relative gap-6">
+
+    <!-- SOCIAL ICONS (DESKTOP + TABLET) -->
+    <div class="hidden md:flex items-center gap-5 text-xl text-gray-700">
+      <a href="#" class="hover:text-[#0a92ce] transition"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" class="hover:text-[#0a92ce] transition"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#" class="hover:text-[#0a92ce] transition"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="#" class="hover:text-[#0a92ce] transition"><i class="fa-solid fa-phone"></i></a>
+    </div>
+
+    <!-- MOBILE MENU BUTTON -->
     <button id="menuBtn" class="text-black text-2xl md:hidden">☰</button>
 
     <!-- DESKTOP MENU -->
-    <nav class="hidden md:flex gap-10 text-black text-sm font-medium items-center">
+    <nav class="hidden md:flex gap-10 text-black text-sm font-medium items-center select-none">
 
-      <!-- HOME -->
-      <a href="#" class="hover:text-[#0a8ecf] transition">Home</a>
+      <!-- HOME DROPDOWN -->
+      <div class="relative group">
+        <a href="#" class="hover:text-[#0a8ecf] transition">Home</a>
+        <div class="absolute left-0 top-full mt-4 w-44 bg-white shadow-lg hidden group-hover:block rounded-md overflow-hidden">
+          <a href="#" class="block px-5 py-3 hover:bg-gray-100">Home Style 1</a>
+          <a href="#" class="block px-5 py-3 hover:bg-gray-100">Home Style 2</a>
+        </div>
+      </div>
 
       <!-- ABOUT DROPDOWN -->
       <div class="relative group">
         <a href="#" class="hover:text-[#0a8ecf] transition">About</a>
-        <div class="absolute left-0 top-full mt-6 w-44 bg-white shadow-lg hidden group-hover:block">
+        <div class="absolute left-0 top-full mt-4 w-44 bg-white shadow-lg hidden group-hover:block rounded-md overflow-hidden">
           <a href="#" class="block px-5 py-3 hover:bg-gray-100">Our Team</a>
           <a href="#" class="block px-5 py-3 hover:bg-gray-100">Company</a>
         </div>
@@ -289,7 +305,7 @@
       <!-- SERVICES DROPDOWN -->
       <div class="relative group">
         <a href="#" class="hover:text-[#0a8ecf] transition">Services</a>
-        <div class="absolute left-0 top-full mt-6 w-52 bg-white shadow-lg hidden group-hover:block">
+        <div class="absolute left-0 top-full mt-4 w-52 bg-white shadow-lg hidden group-hover:block rounded-md overflow-hidden">
           <a href="#" class="block px-5 py-3 hover:bg-gray-100">HR Consulting</a>
           <a href="#" class="block px-5 py-3 hover:bg-gray-100">Recruitment</a>
           <a href="#" class="block px-5 py-3 hover:bg-gray-100">Training</a>
@@ -299,7 +315,7 @@
       <!-- PAGES DROPDOWN -->
       <div class="relative group">
         <a href="#" class="hover:text-[#0a8ecf] transition">Pages</a>
-        <div class="absolute left-0 top-full mt-6 w-44 bg-white shadow-lg hidden group-hover:block">
+        <div class="absolute left-0 top-full mt-4 w-44 bg-white shadow-lg hidden group-hover:block rounded-md overflow-hidden">
           <a href="#" class="block px-5 py-3 hover:bg-gray-100">Case Study</a>
           <a href="#" class="block px-5 py-3 hover:bg-gray-100">FAQ</a>
         </div>
@@ -308,24 +324,37 @@
       <!-- CONTACT DROPDOWN -->
       <div class="relative group">
         <a href="#" class="hover:text-[#0a8ecf] transition">Contact</a>
-        <div class="absolute left-0 top-full mt-6 w-44 bg-white shadow-lg hidden group-hover:block">
+        <div class="absolute left-0 top-full mt-4 w-44 bg-white shadow-lg hidden group-hover:block rounded-md overflow-hidden">
           <a href="#" class="block px-5 py-3 hover:bg-gray-100">Contact Us</a>
           <a href="#" class="block px-5 py-3 hover:bg-gray-100">Support</a>
         </div>
       </div>
 
     </nav>
+
   </div>
 </header>
 
 <!-- ================= MOBILE MENU ================= -->
-<div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg text-black text-center py-6 space-y-4">
-  <a href="#" class="block">Home</a>
-  <a href="#" class="block">About</a>
-  <a href="#" class="block">Services</a>
-  <a href="#" class="block">Pages</a>
-  <a href="#" class="block">Contact</a>
+<div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg text-black text-center py-6 space-y-4 select-none">
+
+  <a href="#" class="block text-lg py-2">Home</a>
+  <div class="border-b"></div>
+
+  <a href="#" class="block text-lg py-2">About</a>
+  <a href="#" class="block text-lg py-2">Services</a>
+  <a href="#" class="block text-lg py-2">Pages</a>
+  <a href="#" class="block text-lg py-2">Contact</a>
+
+  <div class="pt-4 flex justify-center gap-6 text-2xl text-gray-700">
+    <a href="#" class="hover:text-[#0a92ce]"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#" class="hover:text-[#0a92ce]"><i class="fa-brands fa-twitter"></i></a>
+    <a href="#" class="hover:text-[#0a92ce]"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="#" class="hover:text-[#0a92ce]"><i class="fa-solid fa-phone"></i></a>
+  </div>
 </div>
+
+
 <section class="flex flex-col md:flex-row min-h-[90vh] relative bg-white">
 
   <!-- LEFT BLUE PART -->
@@ -952,11 +981,13 @@
         /* ============================
         MOBILE MENU
         ============================ */
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
 
         if (menuBtn && mobileMenu) {
-            menuBtn.onclick = () => mobileMenu.classList.toggle("hidden");
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
         }
 
         /* ============================
