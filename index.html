@@ -260,98 +260,154 @@
 <!-- FULLY REFINED PROFESSIONAL NAVBAR (RESPONSIVE + SOCIAL ICONS + CLEAN DROPDOWNS) -->
 <header class="w-full flex">
 
-  <!-- LEFT BLUE PART (LOGO AREA) -->
-  <div class="bg-gradient-to-r from-[#0a92ce] to-[#00b3d7] w-[60%] px-6 md:px-16 py-4 flex items-center">
-    <div class="flex items-center gap-2 text-white font-bold text-lg select-none">
-      <span class="text-xl">◆</span> HR ADVISOR
-    </div>
-  </div>
-
-  <!-- RIGHT WHITE PART (MENU AREA) -->
-  <div class="w-[60%] bg-white px-6 md:px-16 py-4 flex items-center justify-end relative gap-6">
-
-    <!-- SOCIAL ICONS (DESKTOP + TABLET) -->
-    <div class="hidden md:flex items-center gap-5 text-xl text-gray-700">
-      <a href="#" class="hover:text-[#0a92ce] transition"><i class="fa-brands fa-facebook"></i></a>
-      <a href="#" class="hover:text-[#0a92ce] transition"><i class="fa-brands fa-twitter"></i></a>
-      <a href="#" class="hover:text-[#0a92ce] transition"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="#" class="hover:text-[#0a92ce] transition"><i class="fa-solid fa-phone"></i></a>
+    <!-- LEFT BLUE AREA -->
+    <div class="bg-gradient-to-r from-[#0a92ce] to-[#00b3d7] w-1/2 px-6 md:px-14 py-4 flex items-center">
+        <div class="flex items-center gap-3 text-white font-bold text-xl select-none">
+            <i class="fa-solid fa-diamond text-2xl"></i>
+            HR ADVISOR
+        </div>
     </div>
 
-    <!-- MOBILE MENU BUTTON -->
-    <button id="menuBtn" class="text-black text-2xl md:hidden">☰</button>
+    <!-- RIGHT AREA -->
+    <div class="w-1/2 bg-white px-6 md:px-14 py-4 flex items-center justify-end gap-8 relative">
 
-    <!-- DESKTOP MENU -->
-    <nav class="hidden md:flex gap-10 text-black text-sm font-medium items-center select-none">
+        <!-- MOBILE MENU BUTTON -->
+        <button id="menuBtn" class="text-3xl md:hidden">
+            <i class="fa-solid fa-bars"></i>
+        </button>
 
-      <!-- HOME DROPDOWN -->
-      <div class="relative group">
-        <a href="#" class="hover:text-[#0a8ecf] transition">Home</a>
-        <div class="absolute left-0 top-full mt-4 w-44 bg-white shadow-lg hidden group-hover:block rounded-md overflow-hidden">
-          <a href="#" class="block px-5 py-3 hover:bg-gray-100">Home Style 1</a>
-          <a href="#" class="block px-5 py-3 hover:bg-gray-100">Home Style 2</a>
-        </div>
-      </div>
+        <!-- DESKTOP MENU -->
+        <nav class="hidden md:flex gap-10 text-black text-sm font-medium select-none">
 
-      <!-- ABOUT DROPDOWN -->
-      <div class="relative group">
-        <a href="#" class="hover:text-[#0a8ecf] transition">About</a>
-        <div class="absolute left-0 top-full mt-4 w-44 bg-white shadow-lg hidden group-hover:block rounded-md overflow-hidden">
-          <a href="#" class="block px-5 py-3 hover:bg-gray-100">Our Team</a>
-          <a href="#" class="block px-5 py-3 hover:bg-gray-100">Company</a>
-        </div>
-      </div>
+            <!-- HOME -->
+            <div class="relative group">
+                <span class="hover:text-[#0a92ce] cursor-pointer">HOME</span>
+                <div class="absolute left-0 top-full mt-3 w-44 bg-gradient-to-r from-[#0a92ce] to-[#00b3d7] shadow-lg rounded-md hidden group-hover:block z-50">
+                    <a class="block px-4 py-3 hover:bg-gray-100">Home Style 1</a>
+                    <a class="block px-4 py-3 hover:bg-gray-100">Home Style 2</a>
+                </div>
+            </div>
 
-      <!-- SERVICES DROPDOWN -->
-      <div class="relative group">
-        <a href="#" class="hover:text-[#0a8ecf] transition">Services</a>
-        <div class="absolute left-0 top-full mt-4 w-52 bg-white shadow-lg hidden group-hover:block rounded-md overflow-hidden">
-          <a href="#" class="block px-5 py-3 hover:bg-gray-100">HR Consulting</a>
-          <a href="#" class="block px-5 py-3 hover:bg-gray-100">Recruitment</a>
-          <a href="#" class="block px-5 py-3 hover:bg-gray-100">Training</a>
-        </div>
-      </div>
+            <!-- PAGES -->
+            <div class="relative group">
+                <span class="hover:text-[#0a92ce] cursor-pointer">PAGES</span>
+                <div class="absolute left-0 top-full mt-3 w-44 bg-gradient-to-r from-[#0a92ce] to-[#00b3d7] shadow-lg rounded-md hidden group-hover:block z-50">
+                    <a class="block px-4 py-3 hover:bg-gray-100">Case Study</a>
+                    <a class="block px-4 py-3 hover:bg-gray-100">FAQ</a>
+                </div>
+            </div>
 
-      <!-- PAGES DROPDOWN -->
-      <div class="relative group">
-        <a href="#" class="hover:text-[#0a8ecf] transition">Pages</a>
-        <div class="absolute left-0 top-full mt-4 w-44 bg-white shadow-lg hidden group-hover:block rounded-md overflow-hidden">
-          <a href="#" class="block px-5 py-3 hover:bg-gray-100">Case Study</a>
-          <a href="#" class="block px-5 py-3 hover:bg-gray-100">FAQ</a>
-        </div>
-      </div>
+            <!-- FEATURES -->
+            <div class="relative group">
+                <span class="hover:text-[#0a92ce] cursor-pointer">FEATURES</span>
+                <div class="absolute left-0 top-full mt-3 w-48 bg-gradient-to-r from-[#0a92ce] to-[#00b3d7] shadow-lg rounded-md hidden group-hover:block z-50">
+                    <a class="block px-4 py-3 hover:bg-gray-100">HR Consulting</a>
+                    <a class="block px-4 py-3 hover:bg-gray-100">Training</a>
+                </div>
+            </div>
 
-      <!-- CONTACT DROPDOWN -->
-      <div class="relative group">
-        <a href="#" class="hover:text-[#0a8ecf] transition">Contact</a>
-        <div class="absolute left-0 top-full mt-4 w-44 bg-white shadow-lg hidden group-hover:block rounded-md overflow-hidden">
-          <a href="#" class="block px-5 py-3 hover:bg-gray-100">Contact Us</a>
-          <a href="#" class="block px-5 py-3 hover:bg-gray-100">Support</a>
-        </div>
-      </div>
+            <!-- BLOG -->
+            <div class="relative group">
+                <span class="hover:text-[#0a92ce] cursor-pointer">BLOG</span>
+                <div class="absolute left-0 top-full mt-3 w-44 bg-gradient-to-r from-[#0a92ce] to-[#00b3d7] shadow-lg rounded-md hidden group-hover:block z-50">
+                    <a class="block px-4 py-3 hover:bg-gray-100">Blog Grid</a>
+                    <a class="block px-4 py-3 hover:bg-gray-100">Blog Details</a>
+                </div>
+            </div>
 
-    </nav>
+            <!-- CONTACT -->
+            <div class="relative group">
+                <span class="hover:text-[#0a92ce] cursor-pointer">CONTACTS</span>
+                <div class="absolute left-0 top-full mt-3 w-44 bg-gradient-to-r from-[#0a92ce] to-[#00b3d7] shadow-lg rounded-md hidden group-hover:block z-50">
+                    <a class="block px-4 py-3 hover:bg-gray-100">Contact Us</a>
+                    <a class="block px-4 py-3 hover:bg-gray-100">Support</a>
+                </div>
+            </div>
 
-  </div>
+            <!-- SOCIAL ICONS -->
+            <div class="hidden md:flex items-center gap-6 text-lg text-gray-700">
+                <i class="fa-solid fa-phone hover:text-[#0a92ce] cursor-pointer"></i>
+                <i class="fa-brands fa-twitter hover:text-[#0a92ce] cursor-pointer"></i>
+                <i class="fa-brands fa-facebook hover:text-[#0a92ce] cursor-pointer"></i>
+                <i class="fa-brands fa-google-plus-g hover:text-[#0a92ce] cursor-pointer"></i>
+                <i class="fa-solid fa-magnifying-glass hover:text-[#0a92ce] cursor-pointer"></i>
+            </div>
+
+        </nav>
+
+    </div>
 </header>
 
+
+
 <!-- ================= MOBILE MENU ================= -->
-<div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg text-black text-center py-6 space-y-4 select-none">
+<div id="mobileMenu" class="hidden md:hidden bg-white p-5 shadow-lg space-y-2">
 
-  <a href="#" class="block text-lg py-2">Home</a>
-  <div class="border-b"></div>
+  <!-- ITEM 1: HOME -->
+  <div>
+    <button class="w-full flex justify-between items-center py-3 border-b mobile-dropdown-btn">
+      <span>Home</span>
+      <i class="fa-solid fa-chevron-down text-sm transition"></i>
+    </button>
 
-  <a href="#" class="block text-lg py-2">About</a>
-  <a href="#" class="block text-lg py-2">Services</a>
-  <a href="#" class="block text-lg py-2">Pages</a>
-  <a href="#" class="block text-lg py-2">Contact</a>
-
-  <div class="pt-4 flex justify-center gap-6 text-2xl text-gray-700">
-    <a href="#" class="hover:text-[#0a92ce]"><i class="fa-brands fa-facebook"></i></a>
-    <a href="#" class="hover:text-[#0a92ce]"><i class="fa-brands fa-twitter"></i></a>
-    <a href="#" class="hover:text-[#0a92ce]"><i class="fa-brands fa-linkedin"></i></a>
-    <a href="#" class="hover:text-[#0a92ce]"><i class="fa-solid fa-phone"></i></a>
+    <div class="mobile-submenu hidden pl-4 pb-2">
+      <a class="block py-2 text-gray-600">Home Style 1</a>
+      <a class="block py-2 text-gray-600">Home Style 2</a>
+    </div>
   </div>
+
+  <!-- ITEM 2: PAGES -->
+  <div>
+    <button class="w-full flex justify-between items-center py-3 border-b mobile-dropdown-btn">
+      <span>Pages</span>
+      <i class="fa-solid fa-chevron-down text-sm transition"></i>
+    </button>
+
+    <div class="mobile-submenu hidden pl-4 pb-2">
+      <a class="block py-2 text-gray-600">Case Study</a>
+      <a class="block py-2 text-gray-600">FAQ</a>
+    </div>
+  </div>
+
+  <!-- ITEM 3: FEATURES -->
+  <div>
+    <button class="w-full flex justify-between items-center py-3 border-b mobile-dropdown-btn">
+      <span>Features</span>
+      <i class="fa-solid fa-chevron-down text-sm transition"></i>
+    </button>
+
+    <div class="mobile-submenu hidden pl-4 pb-2">
+      <a class="block py-2 text-gray-600">HR Consulting</a>
+      <a class="block py-2 text-gray-600">Training</a>
+    </div>
+  </div>
+
+  <!-- ITEM 4: BLOG -->
+  <div>
+    <button class="w-full flex justify-between items-center py-3 border-b mobile-dropdown-btn">
+      <span>Blog</span>
+      <i class="fa-solid fa-chevron-down text-sm transition"></i>
+    </button>
+
+    <div class="mobile-submenu hidden pl-4 pb-2">
+      <a class="block py-2 text-gray-600">Blog Grid</a>
+      <a class="block py-2 text-gray-600">Blog Details</a>
+    </div>
+  </div>
+
+  <!-- ITEM 5: CONTACT -->
+  <div>
+    <button class="w-full flex justify-between items-center py-3 mobile-dropdown-btn">
+      <span>Contacts</span>
+      <i class="fa-solid fa-chevron-down text-sm transition"></i>
+    </button>
+
+    <div class="mobile-submenu hidden pl-4 pb-2">
+      <a class="block py-2 text-gray-600">Contact Us</a>
+      <a class="block py-2 text-gray-600">Support</a>
+    </div>
+  </div>
+
 </div>
 
 
@@ -487,7 +543,7 @@
 
 
 <!-- About Section -->
-<section class="section-padding mt-10">
+<section id="aboutsec" class="section-padding mt-10">
     <div class="container mx-auto px-6">
         <div class="flex flex-col lg:flex-row items-center">
             <div class="lg:w-1/2 mb-10 lg:mb-0">
@@ -981,15 +1037,28 @@
         /* ============================
         MOBILE MENU
         ============================ */
-        const menuBtn = document.getElementById("menuBtn");
-        const mobileMenu = document.getElementById("mobileMenu");
+        const btn = document.getElementById("menuBtn");
+        const mob = document.getElementById("mobileMenu");
 
-        if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener("click", () => {
-            mobileMenu.classList.toggle("hidden");
+        btn.addEventListener("click", () => {
+            mob.classList.toggle("hidden");
         });
-        }
 
+        /* ============================
+        MOBILE SUBMENU DROPDOWN
+        ============================= */
+        const dropdownBtns = document.querySelectorAll(".mobile-dropdown-btn");
+
+        dropdownBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                
+                const submenu = btn.nextElementSibling;  // the submenu <div>
+                const icon = btn.querySelector("i");     // the arrow icon
+
+                submenu.classList.toggle("hidden");      // show/hide submenu
+                icon.classList.toggle("rotate-180");     // rotate arrow
+            });
+        });
         /* ============================
         CAROUSEL
         ============================ */
@@ -1089,6 +1158,21 @@
         }, { threshold: 0.5 });
 
         counters.forEach(counter => observer.observe(counter));
+
+
+        const aboutSection = document.getElementById("aboutsec");
+
+        const aboutObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    aboutSection.classList.remove("opacity-0", "translate-y-8");
+                    aboutSection.classList.add("opacity-100", "translate-y-0");
+                }
+            });
+        }, { threshold: 0.3 });
+
+        aboutObserver.observe(aboutSection);
+
 
     }); // END DOMContentLoaded
 
